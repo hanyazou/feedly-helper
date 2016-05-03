@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+    "name": "Feedly helper",
+    "description": "click Visit Website by return key",
+    "version": "0.1",
+    "permissions": [
+	"tabs" ],
+    "background": { "page": "background.html" },
+    "content_scripts": [{
+	"all_frames": true,
+	"js": [ "jquery-1.4.2.min.js", "content.js" ],
+	"matches": [
+	    "http://*/*",
+	    "https://*/*" ]}],
+    "icons": {
+	"48": "FeedlyHelper48x48.png",
+	"128": "FeedlyHelper128x128.png"
+    }
+}
