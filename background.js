@@ -11,7 +11,7 @@ var openByMe;
 var onRequest = function(request, sender, callback) {
     console.log("#### background.js: ", request.action);
     console.log("#### sendar tab id=" + sender.tab.id);
-    if (senderIsFeedly = sender.url.match(/^https:\/\/feedly.com\/.*/)) {
+    if (senderIsFeedly = sender.url.match(/^http.?:\/\/feedly.com\/.*/)) {
 	console.log("#### URL=" + senderIsFeedly);
     }
     if (request.action == 'open') {
