@@ -8,10 +8,11 @@ $(document).ready(function(){
 	    if (openByMe) {
 		document.onkeyup = function(event) {
 		    console.log("#### key up: " + event.keyCode);
-		    if (event.keyCode==13 ||
-			event.keyCode==76) { // return key or 'l' key
-			    // <a href="..." class="websiteCallForAction">Visit Website</a>
-			    var link = $("a.websiteCallForAction").attr("href");
+		    if (event.keyCode==13 || event.keyCode==76) { // return key or 'l' key
+			// <a href="..." class="websiteCallForAction">Visit Website</a>
+			var link = $("a.websiteCallForAction").attr("href");
+			if (!link)
+			    link = $("a.visitWebsiteButton").attr("href");
 			if (link) {
   			    console.log("#### open: url = " + link);
 			    chrome.extension.sendRequest( { action: "open", url: link } );
